@@ -69,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
             state = State.jumping;
             contador++;
         }
-        print(contador);
     }
 
     //State Machine
