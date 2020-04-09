@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private enum State {idle, running, jumping, falling, landing};
     private State state = State.idle;
     
-    //Touching the ground
+    //Touching the grounds
     [SerializeField] private LayerMask ground;
 
 
