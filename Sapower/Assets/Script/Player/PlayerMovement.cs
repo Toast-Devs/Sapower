@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Collider2D coll;
    
     //Movement Variables
+    private int contador;
     public float speed;
     public float jumpForce;
    
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        
+        contador = 0;
     }
 
 
@@ -61,11 +62,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Jump
-        if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
+        if (Input.GetButtonDown("Jump") && contador<100)
         {
+            
             rb.velocity = new Vector2(0, jumpForce);
             state = State.jumping;
+            contador++;
         }
+        print(contador);
     }
 
     //State Machine
@@ -84,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (coll.IsTouchingLayers(ground))
             {
+                contador=0;
                 state = State.idle;
                 state = State.landing;
             }
