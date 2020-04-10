@@ -112,11 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6e0be3f17986a468ed228b031792e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempoParaVirar: 50
-  Velocidade: 1
+  tempoParaVirar: 1
+  Velocidade: 2
   quaoParaCimaOPlayerVai: 20
-  ComecarPelaDireita: 1
-  ComecarPelaEsquerda: 0
   playerObject: {fileID: 0}
   playerRB: {fileID: 0}
   enemy: {fileID: 7273397506968359794}
