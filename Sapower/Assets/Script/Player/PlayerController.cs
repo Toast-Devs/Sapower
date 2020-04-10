@@ -40,38 +40,32 @@ public class PlayerController : MonoBehaviour
 
         anim.SetInteger("state", (int)state);
         
-        if(rb.velocity.x==0){
+        if(rb.velocity.x>0.1 || rb.velocity.x<-0.1){
             
-            anim.SetBool("running", false);
+            anim.SetBool("Andando", true);
         }
         else{
             
-            anim.SetBool("running", true);
+            anim.SetBool("Andando", false);
         }
         
         //inicio do pulo
-        if(rb.velocity.y>0.1){
+        if(rb.velocity.y>0.1 && noChao){
 
-            if(state==State.jumping){
-                anim.SetBool("Pulando", true);
-            }
-            else{
-                anim.SetBool("Pulando", false);
-                anim.SetBool("Pulo-noar", true);
-                
-            }
+            anim.SetBool("Pulando", true);
 
-
+        }
+        else{
+            anim.SetBool("Pulando", false);
         }
 
         //caindo
         if(!noChao && rb.velocity.y<-0.1){
-            anim.SetBool("Pulo-noar", false);
-                
-            state = State.falling;
+            anim.SetBool("Pulando", false);
+            anim.SetBool("Caindo", true);
         }
         else{
-            state = State.idle;
+            anim.SetBool("Caindo", false);
         }
 
     }
