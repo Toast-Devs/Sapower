@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     //Variaveis publicas
     public float speed;
     public float jumpForce;
-    public float tempoDePulo;
+    public int tempoDePulo;
 
     public LayerMask ground;
     
@@ -102,6 +102,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
         }
+        if(Input.GetButtonUp("Jump")){ contador = tempoDePulo + 1; }
+        
 
         TocarChao();
 
