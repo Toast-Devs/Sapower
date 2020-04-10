@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - "P\xE9"
   - PlayerCoin
+  - Vida
   layers:
   - Default
   - TransparentFX

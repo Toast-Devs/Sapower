@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CoinFx : MonoBehaviour
 {
@@ -11,10 +10,12 @@ public class CoinFx : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "PlayerCoin")
+        if(collision.tag == "PlayerCoin")
         {
 
-            qntCoin++;
+            
+            coinCounter.GetComponent<Coins>().numeroDeCoins++;
+            
             DestroyObject(gameObject);
             PlayFx();
 
@@ -32,12 +33,12 @@ public class CoinFx : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        qntCoin = coinCounter.GetComponent<CoinCounter>().quantidadeCoin;
     }
 
     // Update is called once per frame
     void Update()
     {
+        print(qntCoin);
         
     }
 }

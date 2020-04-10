@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,10 +10,6 @@ public class PlayerController : MonoBehaviour
    
     public int tempoDePulo;
     public LayerMask ground;
-
-    public int coin = 0;
-    public Text coinText;
-
     private Rigidbody2D rb;
     private Collider2D coll;
     private enum State {idle, running, jumping, falling, landing, jump_air}
@@ -134,15 +129,6 @@ public class PlayerController : MonoBehaviour
         Animacoes();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Coin")
-        {
-            Destroy(collision.gameObject);
-            coin += 1;
-            coinText.text = coin.ToString();
-        }
-    }
 
 
 }
