@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public int tempoDePulo;
 =======
     public float tempoDePulo;
+<<<<<<< HEAD
+>>>>>>> parent of b69c12d... Coin
+=======
 >>>>>>> parent of b69c12d... Coin
 
     public LayerMask ground;

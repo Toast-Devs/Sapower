@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: baf1446e1db29a54393846d7b946ad16
+=======
+<<<<<<< HEAD:Sapower/Assets/Sprites/Animações/Player recoded.controller.meta
+guid: b8836f1afef8eb84aa5f0e8bc897c696
+=======
+guid: baf1446e1db29a54393846d7b946ad16
+>>>>>>> parent of b69c12d... Coin:Sapower/Assets/Sprites/Protagonistas/Herói-Sapower/Animações/Pisca/Player.controller.meta
+>>>>>>> parent of b69c12d... Coin
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
