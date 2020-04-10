@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Collider2D coll;
+    private enum State {idle, running, jumping, falling, landing, jump_air}
+    private State state = State.idle;
+    private Animator anim;
 
 
 
@@ -24,15 +27,33 @@ public class PlayerController : MonoBehaviour
     void Start()
 
     {
+        state = State.idle;
         noChao = false;
         contador=0;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
+        anim = GetComponent<Animator>();
     }
     
     //Animações
     void Animações(){
+        anim.SetInteger("state", (int)state);
         
+        //caindo
+        if(!noChao && rb.velocity.y<-0.5){
+            state = State.falling;
+        }
+        else{
+            state = State.idle;
+        }
+
+        //inicio do pulo
+        if(!noChao && rb.velocity.y>0.5){
+            state = State.jumping;
+            state = State.jump_air;
+
+        }
+
     }
     
     //Movimento
@@ -72,6 +93,7 @@ public class PlayerController : MonoBehaviour
         if(noChao == true){
             contador=0;
         }
+
         print("contador: "+contador);
 
     }
@@ -94,5 +116,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
+        Animações();
     }
 }
