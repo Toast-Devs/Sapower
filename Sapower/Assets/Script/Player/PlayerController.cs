@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /*
-    transforma noChao em true ao tocar no layerground 
+    transforma no Chao em true ao tocar no layerground 
     (se ele estiver na parede ele escala, me liga no discord para resolvermos)
     */
     void TocarChao(){
