@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce;
     public float tempoDePulo;
+    public int coin = 0;
+    public GameObject CoinParticle;
 
     public LayerMask ground;
     
@@ -140,4 +142,14 @@ public class PlayerController : MonoBehaviour
         Animacoes
 ();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Coin")
+        {
+            Destroy(collision.gameObject);
+            coin += 1;
+        }
+    }
+
 }
