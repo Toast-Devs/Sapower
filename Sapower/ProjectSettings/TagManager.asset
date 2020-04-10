@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Coin
+  - "P\xE9"
   layers:
   - Default
   - TransparentFX
