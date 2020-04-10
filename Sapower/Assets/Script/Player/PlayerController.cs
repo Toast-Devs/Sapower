@@ -35,23 +35,43 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
     
-    //Animações
-    void Animações(){
+    //Animacoes
+    void Animacoes(){
+
         anim.SetInteger("state", (int)state);
         
+        if(rb.velocity.x==0){
+            
+            anim.SetBool("running", false);
+        }
+        else{
+            
+            anim.SetBool("running", true);
+        }
+        
+        //inicio do pulo
+        if(rb.velocity.y>0.1){
+
+            if(state==State.jumping){
+                anim.SetBool("Pulando", true);
+            }
+            else{
+                anim.SetBool("Pulando", false);
+                anim.SetBool("Pulo-noar", true);
+                
+            }
+
+
+        }
+
         //caindo
-        if(!noChao && rb.velocity.y<-0.5){
+        if(!noChao && rb.velocity.y<-0.1){
+            anim.SetBool("Pulo-noar", false);
+                
             state = State.falling;
         }
         else{
             state = State.idle;
-        }
-
-        //inicio do pulo
-        if(!noChao && rb.velocity.y>0.5){
-            state = State.jumping;
-            state = State.jump_air;
-
         }
 
     }
@@ -86,6 +106,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButton("Jump") && contador<tempoDePulo){
             contador++;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
         }
 
         TocarChao();
@@ -116,6 +137,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
-        Animações();
+        Animacoes
+();
     }
 }
