@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     //Variaveis publicas
     public float speed;
     public float jumpForce;
- 
+
     public int coin = 0;
     public GameObject CoinParticle;
 
