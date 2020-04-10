@@ -117,14 +117,9 @@ public class PlayerController : MonoBehaviour
             contador=0;
         }
 
-        print("contador: "+contador);
 
     }
 
-    /*
-    transforma no Chao em true ao tocar no layerground 
-    (se ele estiver na parede ele escala, me liga no discord para resolvermos)
-    */
     void TocarChao(){
 
         if(coll.IsTouchingLayers(ground)){
@@ -139,8 +134,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
-        Animacoes
-();
+        Animacoes();
     }
 
 
