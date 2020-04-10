@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    
     public int tempoParaVirar;
     public float Velocidade;
     public float quaoParaCimaOPlayerVai;
@@ -11,10 +12,12 @@ public class EnemyController : MonoBehaviour
     public bool comecarPelaEsquerda;
 
     private Rigidbody2D rb;
+    public GameObject vida;
     public GameObject playerObject;
     public Rigidbody2D playerRB;
     public GameObject enemy;
     private Collider2D coll;
+    private int qntvida;
 
     private bool direita; 
     private bool esquerda;
@@ -25,6 +28,9 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        qntvida = vida.GetComponent<Vidas>().NumeroDeVidas;
+
         if(comecarPelaDireita){
             direita = true;
             esquerda = false;
@@ -44,6 +50,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(qntvida);
         Movimento();
     }
 
@@ -81,7 +88,8 @@ public class EnemyController : MonoBehaviour
 
         //Mudar depois para tirar vida e reiniciar a fase
         //vou colocar destroy pra concept proof
-        Destroy(playerObject);
+        qntvida--;
+
 
     }
 
