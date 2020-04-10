@@ -2162,11 +2162,17 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 13
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 4402818528388575657, guid: e09b912ff0be1c148a7bc54350721ef4,
         type: 3}
       propertyPath: tempoDePulo
       value: 20
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 4f0a777... Arrumagem de todos os bug de pulo
+=======
+>>>>>>> parent of 4f0a777... Arrumagem de todos os bug de pulo
     - target: {fileID: 4402818528388575658, guid: e09b912ff0be1c148a7bc54350721ef4,
         type: 3}
       propertyPath: m_Controller
