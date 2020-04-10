@@ -8,12 +8,16 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
  
     public int coin = 0;
     public GameObject CoinParticle;
 
     public int tempoDePulo;
+=======
+    public float tempoDePulo;
+>>>>>>> parent of 4f0a777... Arrumagem de todos os bug de pulo
 =======
     public float tempoDePulo;
 >>>>>>> parent of 4f0a777... Arrumagem de todos os bug de pulo
@@ -112,9 +116,12 @@ public class PlayerController : MonoBehaviour
 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         if(Input.GetButtonUp("Jump")){ contador = tempoDePulo + 1; }
         
+=======
+>>>>>>> parent of 4f0a777... Arrumagem de todos os bug de pulo
 =======
 >>>>>>> parent of 4f0a777... Arrumagem de todos os bug de pulo
 
