@@ -7,7 +7,8 @@ public class EnemyController : MonoBehaviour
     public int tempoParaVirar;
     public float Velocidade;
     public float quaoParaCimaOPlayerVai;
-
+    public bool comecarPelaDireita;
+    public bool comecarPelaEsquerda;
 
     private Rigidbody2D rb;
     public GameObject playerObject;
@@ -15,7 +16,8 @@ public class EnemyController : MonoBehaviour
     public GameObject enemy;
     private Collider2D coll;
 
-
+    private bool direita; 
+    private bool esquerda;
     private int contador;
     private int contadorDireita;
     private int contadorEsquerda;
@@ -23,6 +25,15 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(comecarPelaDireita){
+            direita = true;
+            esquerda = false;
+        }
+        if(comecarPelaEsquerda){
+            direita = false;
+            esquerda = true;
+        }
+        contador=0;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         contadorDireita = 0;
@@ -33,7 +44,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Movimento();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -49,7 +60,21 @@ public class EnemyController : MonoBehaviour
     }
 
     void Movimento(){
-
+        if(direita && contador<tempoParaVirar){
+            transform.localScale = new Vector2(1, 1);
+            rb.velocity = new Vector2(Velocidade, rb.velocity.y);
+            contador++;
+        }
+        if(esquerda && contador<tempoParaVirar){
+            transform.localScale = new Vector2(-1, 1);
+            rb.velocity = new Vector2(-Velocidade, rb.velocity.y);
+            contador++;
+        }
+        if(contador>=tempoParaVirar){
+            direita=!direita;
+            esquerda=!esquerda;
+            contador=0;
+        }
     }
 
     void Matar(){

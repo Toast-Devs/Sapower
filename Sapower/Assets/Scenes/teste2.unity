@@ -2300,6 +2300,16 @@ PrefabInstance:
       propertyPath: playerRB
       value: 
       objectReference: {fileID: 1464441430}
+    - target: {fileID: 7273397506968359799, guid: c4cd57a1e234f784ab8a295b7e55576d,
+        type: 3}
+      propertyPath: comecarPelaDireita
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273397506968359799, guid: c4cd57a1e234f784ab8a295b7e55576d,
+        type: 3}
+      propertyPath: tempoParaVirar
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4cd57a1e234f784ab8a295b7e55576d, type: 3}
 --- !u!1001 &8231555696770651849
