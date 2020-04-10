@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
     //Animacoes
     void Animacoes(){
 
-        anim.SetInteger("state", (int)state);
         
         if(rb.velocity.x>0.1 || rb.velocity.x<-0.1){
             
