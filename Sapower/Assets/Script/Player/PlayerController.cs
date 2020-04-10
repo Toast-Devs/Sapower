@@ -7,13 +7,12 @@ public class PlayerController : MonoBehaviour
     //Variaveis publicas
     public float speed;
     public float jumpForce;
-<<<<<<< HEAD
-    public float tempoDePulo;
+
+ 
     public int coin = 0;
     public GameObject CoinParticle;
-=======
+
     public int tempoDePulo;
->>>>>>> 25cc1d960e4d38ff2e9a1af15f7c818d2192e4b1
 
     public LayerMask ground;
     
@@ -108,6 +107,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
         }
+
         if(Input.GetButtonUp("Jump")){ contador = tempoDePulo + 1; }
         
 
@@ -143,6 +143,7 @@ public class PlayerController : MonoBehaviour
 ();
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Coin")
@@ -151,5 +152,6 @@ public class PlayerController : MonoBehaviour
             coin += 1;
         }
     }
+
 
 }
