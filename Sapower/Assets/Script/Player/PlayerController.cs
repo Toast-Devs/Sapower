@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Collider2D coll;
+    private enum State {idle, running, jumping, falling, landing}
+    private State state = State.idle;
+    private Animator anim;
 
 
 
@@ -24,15 +27,22 @@ public class PlayerController : MonoBehaviour
     void Start()
 
     {
+        state = State.idle;
         noChao = false;
         contador=0;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
+        anim = GetComponent<Animator>();
     }
     
     //Animações
     void Animações(){
+        anim.SetInteger("state", (int)state);
         
+        if(!noChao){
+            state = State.falling;
+        }
+
     }
     
     //Movimento
