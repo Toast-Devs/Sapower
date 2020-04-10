@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
 
     public int coin = 0;
-    public GameObject CoinParticle;
-
+    public Text coinText;
+   
     public int tempoDePulo;
     public LayerMask ground;
     
@@ -140,6 +141,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             coin += 1;
+            coinText.text = coin.ToString();
         }
     }
 
