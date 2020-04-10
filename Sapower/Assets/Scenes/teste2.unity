@@ -128,6 +128,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 633394826, guid: e09b912ff0be1c148a7bc54350721ef4, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 633394828, guid: e09b912ff0be1c148a7bc54350721ef4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4402818528388575654, guid: e09b912ff0be1c148a7bc54350721ef4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2146,6 +2154,26 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &2067539816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 633394826, guid: e09b912ff0be1c148a7bc54350721ef4,
+    type: 3}
+  m_PrefabInstance: {fileID: 110258538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2067539819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067539816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53f448e2a1c0884699f59ab24a75217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: 0
+  coinText: {fileID: 0}
 --- !u!1 &2070481335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,16 +2328,6 @@ PrefabInstance:
       propertyPath: playerRB
       value: 
       objectReference: {fileID: 1464441430}
-    - target: {fileID: 7273397506968359799, guid: c4cd57a1e234f784ab8a295b7e55576d,
-        type: 3}
-      propertyPath: comecarPelaDireita
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7273397506968359799, guid: c4cd57a1e234f784ab8a295b7e55576d,
-        type: 3}
-      propertyPath: tempoParaVirar
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4cd57a1e234f784ab8a295b7e55576d, type: 3}
 --- !u!1001 &8231555696770651849
@@ -2379,5 +2397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin slot
       objectReference: {fileID: 0}
+    - target: {fileID: 8231555697650486527, guid: de9b235272531c843a8d4dca88b5c376,
+        type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 1358377207}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de9b235272531c843a8d4dca88b5c376, type: 3}
