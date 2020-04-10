@@ -2167,6 +2167,11 @@ PrefabInstance:
       propertyPath: tempoDePulo
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4402818528388575657, guid: e09b912ff0be1c148a7bc54350721ef4,
+        type: 3}
+      propertyPath: ground.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 4402818528388575658, guid: e09b912ff0be1c148a7bc54350721ef4,
         type: 3}
       propertyPath: m_Controller
