@@ -7,15 +7,7 @@ public class PlayerController : MonoBehaviour
     //Variaveis publicas
     public float speed;
     public float jumpForce;
-<<<<<<< HEAD
     public int tempoDePulo;
-=======
-    public float tempoDePulo;
-<<<<<<< HEAD
->>>>>>> parent of b69c12d... Coin
-=======
->>>>>>> parent of b69c12d... Coin
-
     public LayerMask ground;
     
 
@@ -109,6 +101,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
         }
+
         if(Input.GetButtonUp("Jump")){ contador = tempoDePulo + 1; }
         
 
