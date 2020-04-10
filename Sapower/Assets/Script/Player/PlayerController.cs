@@ -7,7 +7,11 @@ public class PlayerController : MonoBehaviour
     //Variaveis publicas
     public float speed;
     public float jumpForce;
+<<<<<<< HEAD
     public int tempoDePulo;
+=======
+    public float tempoDePulo;
+>>>>>>> parent of b69c12d... Coin
 
     public LayerMask ground;
     
