@@ -21,14 +21,6 @@ public class CoinCollision : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Coin")
-        {
-            Destroy(collision.gameObject);
-            coin += 1;
-            coinText.text = coin.ToString();
-        }
-    }
+    
 
 }

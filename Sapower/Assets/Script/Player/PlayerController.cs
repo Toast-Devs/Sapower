@@ -8,13 +8,12 @@ public class PlayerController : MonoBehaviour
     //Variaveis publicas
     public float speed;
     public float jumpForce;
-
-    public int coin = 0;
-    public Text coinText;
    
     public int tempoDePulo;
     public LayerMask ground;
-    
+
+    public int coin = 0;
+    public Text coinText;
 
     private Rigidbody2D rb;
     private Collider2D coll;

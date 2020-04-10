@@ -5,17 +5,20 @@ using UnityEngine.UI;
 
 public class CoinFx : MonoBehaviour
 {
-    public int coin = 0;
-    public Text coinText;
     public GameObject Coinfx;
+    private int qntCoin;
+    public GameObject coinCounter;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "PlayerCoin")
         {
+
+            qntCoin++;
             DestroyObject(gameObject);
-            coinText.text = coin.ToString();
             PlayFx();
+
+
         }
     }
 
@@ -29,7 +32,7 @@ public class CoinFx : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        qntCoin = coinCounter.GetComponent<CoinCounter>().quantidadeCoin;
     }
 
     // Update is called once per frame
