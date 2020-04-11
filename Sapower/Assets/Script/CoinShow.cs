@@ -4,19 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CoinShow : MonoBehaviour
 {
-
+    int qntCoin;
     private Text text;
-    public GameObject coins;
+    public GameObject contador;
 
     // Start is called before the first frame update
     void Start()
     {
-        coins = GetComponent<Coins>();
+        text = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        qntCoin = contador.GetComponent<Coins>().numeroDeCoins;
+        text.text = qntCoin.ToString();
     }
+
+   
+
 }
