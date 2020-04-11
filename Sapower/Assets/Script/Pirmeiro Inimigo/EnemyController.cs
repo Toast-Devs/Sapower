@@ -5,12 +5,14 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     
+    public int quantasMoedasOMobDropa;
     public int tempoParaVirar;
     public float Velocidade;
     public float quaoParaCimaOPlayerVai;
     public bool comecarPelaDireita;
     public bool comecarPelaEsquerda;
 
+    public GameObject CoinDropObj;
     private Rigidbody2D rb;
     public GameObject vida;
     public GameObject playerObject;
@@ -19,6 +21,7 @@ public class EnemyController : MonoBehaviour
     private Collider2D coll;
     private int qntvida;
 
+    private bool morreu;
     private bool direita; 
     private bool esquerda;
     private int contador;
@@ -56,8 +59,9 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         
         if(other.tag == "Pé"){
-            print("a");
             Morrer();
+            CoinDropObj.GetComponent<MobsCoinDrop>().morreu = true;
+            CoinDropObj.GetComponent<MobsCoinDrop>().mob = this.gameObject;
         }
         if(other.tag == "Player"){
             Matar();
@@ -94,12 +98,8 @@ public class EnemyController : MonoBehaviour
 
     void Morrer(){
 
-        //Mudar depois para dropar moeda ou algo assim
         //vou colocar destroy pra concept proof
         playerRB.velocity = new Vector2(playerRB.velocity.x, quaoParaCimaOPlayerVai);
-        Destroy(enemy);
-
-
 
     }
 }
