@@ -15,6 +15,6 @@ public class Vidas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print(NumeroDeVidas);
     }
 }

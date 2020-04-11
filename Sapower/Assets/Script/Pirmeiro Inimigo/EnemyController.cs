@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         
-        qntvida = vida.GetComponent<Vidas>().NumeroDeVidas;
+     
 
         if(comecarPelaDireita){
             direita = true;
@@ -87,7 +87,7 @@ public class EnemyController : MonoBehaviour
 
         //Mudar depois para tirar vida e reiniciar a fase
         //vou colocar destroy pra concept proof
-        qntvida--;
+        vida.GetComponent<Vidas>().NumeroDeVidas--;
 
 
     }
