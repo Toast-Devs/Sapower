@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
 
 
         //Pulo
-        if(Input.GetButton("Jump") && contador<tempoDePulo && noChao){
+        if(Input.GetButton("Jump") && contador<tempoDePulo){
             contador++;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
