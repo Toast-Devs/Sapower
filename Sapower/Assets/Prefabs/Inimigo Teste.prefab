@@ -117,6 +117,7 @@ MonoBehaviour:
   quaoParaCimaOPlayerVai: 20
   comecarPelaDireita: 1
   comecarPelaEsquerda: 0
+  vida: {fileID: 0}
   playerObject: {fileID: 0}
   playerRB: {fileID: 0}
   enemy: {fileID: 7273397506968359794}
