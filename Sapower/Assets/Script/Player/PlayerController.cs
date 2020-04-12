@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce;
     public float shortHop;
-
+    public bool movementCancel;
    
     public int tempoDePulo;
     public LayerMask ground;
@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
+        movementCancel = false;
     }
     
     //Animacoes
@@ -119,9 +120,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        Animacoes();
+      if (!movementCancel)
+        {
+            Movement();
+            Animacoes();
+        }
+      
     }
+
 
 
 

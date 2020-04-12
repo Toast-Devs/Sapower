@@ -59,7 +59,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         
-        if(other.tag == "Pé"){
+        if(other.tag == "Pé" && GetComponent<KnockBack>().backMovement == false){
             Morrer();
             CoinDropObj.GetComponent<MobsCoinDrop>().morreu = true;
             CoinDropObj.GetComponent<MobsCoinDrop>().mob = gameObject;

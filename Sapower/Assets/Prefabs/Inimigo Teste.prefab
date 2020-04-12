@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7273397506968359799}
   - component: {fileID: 7273397506968359798}
   - component: {fileID: 1140379820}
+  - component: {fileID: 2430112421285471759}
   m_Layer: 0
   m_Name: Inimigo Teste
   m_TagString: Untagged
@@ -144,7 +145,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &1140379820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,3 +160,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Explosion: {fileID: 846057722655170716, guid: eb8d3bdaefcc98d4dbc4ca74804b908b,
     type: 3}
+--- !u!114 &2430112421285471759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7273397506968359794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21aa29d395fdc3346a25c3d5240964c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockback: 5
+  knockbackLenght: 0.2
+  knockbackCount: 0
+  knockFromRight: 0
+  backMovement: 0
