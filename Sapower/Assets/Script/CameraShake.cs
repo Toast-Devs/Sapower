@@ -23,10 +23,7 @@ public class CameraShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.K))
-        {
-            StartShake(0.2f, 0.3f);
-        }
+        
     }
 
     private void LateUpdate()
