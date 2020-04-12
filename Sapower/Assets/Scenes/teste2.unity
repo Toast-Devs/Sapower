@@ -306,9 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f724b9fe9b6b14abe381632e4ee7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeTime: 0
-  shakePower: 0
-  shakeFade: 0
+  rotationMultiplier: 15
 --- !u!1 &502537193
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +379,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1612926219
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -1209,6 +1207,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1458309640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7273397506968359794, guid: c4cd57a1e234f784ab8a295b7e55576d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7273397508607139008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1458309641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458309640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983d0f856219ca449a74634803c4c3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explosion: {fileID: 846057722655170716, guid: eb8d3bdaefcc98d4dbc4ca74804b908b,
+    type: 3}
 --- !u!1 &1464441425 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4402818528388575656, guid: e09b912ff0be1c148a7bc54350721ef4,
@@ -1276,6 +1294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e835a9a9a29c846baad95fb2b22d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  morreu: 0
+  coinObj: {fileID: 0}
+  mob: {fileID: 0}
 --- !u!1 &2009819163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,7 +1369,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1612926219
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

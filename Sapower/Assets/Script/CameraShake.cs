@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    public float shakeTime;
-    public float shakePower;
-    public float shakeFade;
+    
+    private float shakeTime;
+    private float shakePower;
+    private float shakeFade;
+    private float shakeRotation;
+
+    public static CameraShake instance;
+    public float rotationMultiplier;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -36,7 +41,12 @@ public class CameraShake : MonoBehaviour
             transform.position += new Vector3(xAmount, yAmount, 0);
 
             shakePower = Mathf.MoveTowards(shakePower, 0, shakeFade * Time.deltaTime);
+
+            shakeRotation = Mathf.MoveTowards(shakeRotation, 0f, shakeFade * rotationMultiplier * Time.deltaTime);
         }
+
+        transform.rotation = Quaternion.Euler(0f, 0f, shakeRotation * Random.Range(-1f, 1f));
+
     }
 
     public void StartShake(float lenght, float power)
@@ -45,5 +55,7 @@ public class CameraShake : MonoBehaviour
         shakePower = power;
 
         shakeFade = power / lenght;
+
+        shakeRotation = power * rotationMultiplier;
     }
 }
