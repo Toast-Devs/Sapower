@@ -25,7 +25,6 @@ public class ExplosionFX : MonoBehaviour
         {
 
 
-            DestroyObject(gameObject);
             PlayFx();
             CameraShake.instance.StartShake(0.2f, 0.3f);
 
