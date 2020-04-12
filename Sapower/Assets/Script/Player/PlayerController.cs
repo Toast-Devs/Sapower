@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
 
         //Pulo
-        if(Input.GetButton("Jump") && noChao == true && anim.GetBool("Caindo") == false){
+        if(Input.GetButtonDown("Jump") && noChao == true && anim.GetBool("Caindo") == false){
            
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
