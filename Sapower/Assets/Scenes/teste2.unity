@@ -128,6 +128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1779920376, guid: e09b912ff0be1c148a7bc54350721ef4, type: 3}
+      propertyPath: coinObj
+      value: 
+      objectReference: {fileID: 1022318188}
     - target: {fileID: 4402818528388575654, guid: e09b912ff0be1c148a7bc54350721ef4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1239,55 +1243,19 @@ Rigidbody2D:
     type: 3}
   m_PrefabInstance: {fileID: 110258538}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1464441432 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4402818528388575654, guid: e09b912ff0be1c148a7bc54350721ef4,
-    type: 3}
-  m_PrefabInstance: {fileID: 110258538}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1721497608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1721497608, guid: e09b912ff0be1c148a7bc54350721ef4,
     type: 3}
   m_PrefabInstance: {fileID: 110258538}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1779920374
+--- !u!1 &1779920374 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1779920374, guid: e09b912ff0be1c148a7bc54350721ef4,
+    type: 3}
+  m_PrefabInstance: {fileID: 110258538}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1779920375}
-  - component: {fileID: 1779920376}
-  m_Layer: 0
-  m_Name: Moedas que os mobs dropam
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1779920375
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779920374}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1464441432}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1779920376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1779920374}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1297,6 +1265,8 @@ MonoBehaviour:
   morreu: 0
   coinObj: {fileID: 0}
   mob: {fileID: 0}
+=======
+>>>>>>> bd13271c96f0352c68fe42094ef1ab97358789c0
 --- !u!1 &2009819163
 GameObject:
   m_ObjectHideFlags: 0
