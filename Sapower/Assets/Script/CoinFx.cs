@@ -39,7 +39,6 @@ public class CoinFx : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(qntCoin);
         
     }
 }

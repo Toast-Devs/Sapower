@@ -75,12 +75,12 @@ public class EnemyController : MonoBehaviour
     }
 
     void Movimento(){
-        if(direita && contador<tempoParaVirar){
+        if(direita && contador<tempoParaVirar && !esquerda){
             transform.localScale = new Vector2(1, 1);
             rb.velocity = new Vector2(Velocidade, rb.velocity.y);
             contador++;
         }
-        if(esquerda && contador<tempoParaVirar){
+        if(esquerda && contador<tempoParaVirar && !direita){
             transform.localScale = new Vector2(-1, 1);
             rb.velocity = new Vector2(-Velocidade, rb.velocity.y);
             contador++;

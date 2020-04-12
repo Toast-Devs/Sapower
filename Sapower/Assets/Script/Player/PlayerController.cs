@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
 
 
+    private bool a;
     private int contador; 
     private bool noChao;
 
@@ -69,6 +70,7 @@ public class PlayerController : MonoBehaviour
     
     //Movimento
     void Movement(){
+                TocarChao();
 
         //Horizontal detection
         float hDirection = Input.GetAxisRaw("Horizontal");
@@ -92,20 +94,21 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
+        if(Input.GetButtonUp("Jump")){ contador = tempoDePulo + 5; a = true;}
+        if(Input.GetButtonUp("Jump")){ contador = tempoDePulo + 5; }
 
         //Pulo
         if(Input.GetButton("Jump") && contador<tempoDePulo){
             contador++;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
+            a = false;
         }
 
-        if(Input.GetButtonUp("Jump")){ contador = tempoDePulo + 1; }
         
 
-        TocarChao();
 
-        if(noChao == true){
+
+        if(noChao == true && a ==true){
             contador=0;
         }
 
