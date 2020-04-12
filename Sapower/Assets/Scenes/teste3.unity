@@ -1887,12 +1887,12 @@ PrefabInstance:
     - target: {fileID: 7273397506968359797, guid: c4cd57a1e234f784ab8a295b7e55576d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.350996
+      value: 12.31
       objectReference: {fileID: 0}
     - target: {fileID: 7273397506968359797, guid: c4cd57a1e234f784ab8a295b7e55576d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15677595
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: 7273397506968359797, guid: c4cd57a1e234f784ab8a295b7e55576d,
         type: 3}
@@ -1938,6 +1938,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273397506968359799, guid: c4cd57a1e234f784ab8a295b7e55576d,
+        type: 3}
+      propertyPath: Distancia
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273397506968359799, guid: c4cd57a1e234f784ab8a295b7e55576d,
+        type: 3}
+      propertyPath: tempoParaVirar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273397506968359799, guid: c4cd57a1e234f784ab8a295b7e55576d,
+        type: 3}
+      propertyPath: Velocidade
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4cd57a1e234f784ab8a295b7e55576d, type: 3}
@@ -3862,7 +3877,7 @@ PrefabInstance:
     - target: {fileID: 5505053157399870595, guid: c1be7a0bfc8af3c4b83d8b7e682cc04e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.42
+      value: 13.06
       objectReference: {fileID: 0}
     - target: {fileID: 5505053157399870595, guid: c1be7a0bfc8af3c4b83d8b7e682cc04e,
         type: 3}
