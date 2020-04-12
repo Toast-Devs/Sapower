@@ -168,7 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 13
+  jumpForce: 20
+  shortHop: 0.5
   tempoDePulo: 20
   ground:
     serializedVersion: 2
