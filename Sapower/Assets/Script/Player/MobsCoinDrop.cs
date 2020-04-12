@@ -31,11 +31,14 @@ public class MobsCoinDrop : MonoBehaviour
         if(contador>10){
             Destroy(mob);
             for(int contador2=0; contador2<mob.GetComponent<EnemyController>().quantasMoedasOMobDropa; contador2++){
-                Instantiate(coinObj, new Vector3(mob.transform.position.x + Random.Range(-1,1), mob.transform.position.y, mob.transform.position.z), new Quaternion(mob.transform.rotation.x,
+                Instantiate(coinObj, new Vector3(mob.transform.position.x + Random.Range(-1,1), mob.transform.position.y + Random.Range(1,2), mob.transform.position.z), new Quaternion(mob.transform.rotation.x, mob.transform.rotation.y, mob.transform.rotation.z, mob.transform.rotation.w));
 
-                mob.transform.rotation.y, mob.transform.rotation.z, mob.transform.rotation.w));
+                
             }
+            
+            
             morreu = false;
         }
+        
     }
 }
