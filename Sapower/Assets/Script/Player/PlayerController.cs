@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     //Variaveis publicas
     public float speed;
     public float jumpForce;
+    public float shortHop;
+
    
     public int tempoDePulo;
     public LayerMask ground;
@@ -16,9 +18,6 @@ public class PlayerController : MonoBehaviour
     private State state = State.idle;
     private Animator anim;
 
-
-
-    private int contador; 
     private bool noChao;
 
     // Start is called before the first frame update
@@ -27,7 +26,6 @@ public class PlayerController : MonoBehaviour
     {
         state = State.idle;
         noChao = false;
-        contador=0;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
@@ -69,6 +67,7 @@ public class PlayerController : MonoBehaviour
     
     //Movimento
     void Movement(){
+                TocarChao();
 
         //Horizontal detection
         float hDirection = Input.GetAxisRaw("Horizontal");
@@ -94,21 +93,16 @@ public class PlayerController : MonoBehaviour
 
 
         //Pulo
-        if(Input.GetButton("Jump") && contador<tempoDePulo){
-            contador++;
+        if(Input.GetButton("Jump") && noChao == true && anim.GetBool("Caindo") == false){
+           
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
         }
 
-        if(Input.GetButtonUp("Jump")){ contador = tempoDePulo + 1; }
-        
-
-        TocarChao();
-
-        if(noChao == true){
-            contador=0;
+        if(Input.GetButtonUp("Jump") && rb.velocity.y > 5)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * shortHop);
         }
-
 
     }
 
