@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonUp("Jump")){ contador = tempoDePulo + 5; }
 
         //Pulo
-        if(Input.GetButton("Jump") && contador<tempoDePulo){
+        if(Input.GetButton("Jump") && contador<tempoDePulo && anim.GetBool("Caindo") == false){
             contador++;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             a = false;
