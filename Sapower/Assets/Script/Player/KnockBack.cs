@@ -8,17 +8,24 @@ public class KnockBack : MonoBehaviour
     public float knockbackLenght;
     public float knockbackCount;
     public bool knockFromRight;
+    private GameObject playerObj;
 
+
+    private void movement() { playerObj.GetComponent<PlayerController>().Movement(); }
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       playerObj = GameObject.Find("player_real");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (knockbackCount <= 0)
+        {
+            movement();
+        }
     }
 }

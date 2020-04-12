@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     }
     
     //Movimento
-    void Movement(){
+    public void Movement(){
                 TocarChao();
 
         //Horizontal detection
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector2(1, 1);
 
         }
-        //Direita
+        //Esquerda
         else if(hDirection<-0.1){
             
 
