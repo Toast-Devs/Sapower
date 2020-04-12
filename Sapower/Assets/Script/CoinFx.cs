@@ -33,7 +33,7 @@ public class CoinFx : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            coinCounter = GameObject.Find("player/Contadores");
+            coinCounter = GameObject.Find("player_real/Contadores");
     }
 
     // Update is called once per frame

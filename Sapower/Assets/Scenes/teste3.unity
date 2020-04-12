@@ -2231,30 +2231,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 477960812308955757, guid: 1ac5cf5ca0128c5498ab23dd0b4f786b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 477960812322415024, guid: 1ac5cf5ca0128c5498ab23dd0b4f786b,
-        type: 3}
-      propertyPath: contador
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 477960812322415026, guid: 1ac5cf5ca0128c5498ab23dd0b4f786b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 477960812690829793, guid: 1ac5cf5ca0128c5498ab23dd0b4f786b,
         type: 3}
       propertyPath: m_Name
       value: Ui
-      objectReference: {fileID: 0}
-    - target: {fileID: 477960812690829793, guid: 1ac5cf5ca0128c5498ab23dd0b4f786b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 477960812690829796, guid: 1ac5cf5ca0128c5498ab23dd0b4f786b,
         type: 3}
@@ -2365,21 +2345,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 477960813748645434, guid: 1ac5cf5ca0128c5498ab23dd0b4f786b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 477960813988288760, guid: 1ac5cf5ca0128c5498ab23dd0b4f786b,
-        type: 3}
-      propertyPath: contador
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 477960813988288762, guid: 1ac5cf5ca0128c5498ab23dd0b4f786b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ac5cf5ca0128c5498ab23dd0b4f786b, type: 3}

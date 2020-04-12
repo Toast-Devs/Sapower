@@ -32,9 +32,9 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
 
-        CoinDropObj = GameObject.Find("player/CoinDropObj");
-        vida = GameObject.Find("player/Contadores");
-        playerObject = GameObject.Find("player");
+        CoinDropObj = GameObject.Find("player_real/CoinDropObj");
+        vida = GameObject.Find("player_real/Contadores");
+        playerObject = GameObject.Find("player_real");
         playerRB = playerObject.GetComponent<Rigidbody2D>();
         
      
