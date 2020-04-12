@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     private State state = State.idle;
     private Animator anim;
 
-
     private bool noChao;
 
     // Start is called before the first frame update
@@ -94,7 +93,6 @@ public class PlayerController : MonoBehaviour
 
 
         //Pulo
-
         if(Input.GetButton("Jump") && noChao == true && anim.GetBool("Caindo") == false){
            
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
