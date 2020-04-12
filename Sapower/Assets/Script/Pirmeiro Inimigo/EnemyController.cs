@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     
     public int quantasMoedasOMobDropa;
-    public int tempoParaVirar;
+    public float tempoParaVirar;
     public float Velocidade;
     public float quaoParaCimaOPlayerVai;
     public bool comecarPelaDireita;
@@ -21,12 +21,9 @@ public class EnemyController : MonoBehaviour
     private Collider2D coll;
     private int qntvida;
 
-    private bool morreu;
     private bool direita; 
     private bool esquerda;
-    private int contador;
-    private int contadorDireita;
-    private int contadorEsquerda;
+    private float tempo;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +33,7 @@ public class EnemyController : MonoBehaviour
         vida = GameObject.Find("player_real/Contadores");
         playerObject = GameObject.Find("player_real");
         playerRB = playerObject.GetComponent<Rigidbody2D>();
-        
+        tempo = tempoParaVirar;
      
 
         if(comecarPelaDireita){
@@ -47,12 +44,11 @@ public class EnemyController : MonoBehaviour
             direita = false;
             esquerda = true;
         }
-        contador=0;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
-        contadorDireita = 0;
+        
 
-        contadorEsquerda=tempoParaVirar;
+        
     }
 
     // Update is called once per frame
@@ -75,20 +71,20 @@ public class EnemyController : MonoBehaviour
     }
 
     void Movimento(){
-        if(direita && contador<tempoParaVirar && !esquerda){
+        if(direita && tempoParaVirar>0 && !esquerda){
             transform.localScale = new Vector2(1, 1);
-            rb.velocity = new Vector2(Velocidade, rb.velocity.y);
-            contador++;
+            transform.Translate(new Vector3(Velocidade*Time.deltaTime, 0, 0), Space.Self);
+            tempoParaVirar -= Time.deltaTime;
         }
-        if(esquerda && contador<tempoParaVirar && !direita){
+        else if(esquerda && tempoParaVirar>0 && !direita){
             transform.localScale = new Vector2(-1, 1);
-            rb.velocity = new Vector2(-Velocidade, rb.velocity.y);
-            contador++;
+            transform.Translate(new Vector3(-Velocidade*Time.deltaTime, 0, 0),Space.Self);
+            tempoParaVirar-= Time.deltaTime;
         }
-        if(contador>=tempoParaVirar){
+        else{
             direita=!direita;
             esquerda=!esquerda;
-            contador=0;
+            tempoParaVirar=tempo;
         }
     }
 

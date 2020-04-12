@@ -114,8 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantasMoedasOMobDropa: 4
-  tempoParaVirar: 200
-  Velocidade: 3
+  tempoParaVirar: 4
+  Velocidade: 1
   quaoParaCimaOPlayerVai: 20
   comecarPelaDireita: 0
   comecarPelaEsquerda: 1
