@@ -9,6 +9,8 @@ TagManager:
   - "P\xE9"
   - PlayerCoin
   - Vida
+  - CoinDropObj
+  - Contadores
   layers:
   - Default
   - TransparentFX

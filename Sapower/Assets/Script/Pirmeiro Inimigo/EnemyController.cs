@@ -31,6 +31,11 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        CoinDropObj = GameObject.Find("player/CoinDropObj");
+        vida = GameObject.Find("player/Contadores");
+        playerObject = GameObject.Find("player");
+        playerRB = playerObject.GetComponent<Rigidbody2D>();
         
      
 
@@ -61,7 +66,7 @@ public class EnemyController : MonoBehaviour
         if(other.tag == "Pé"){
             Morrer();
             CoinDropObj.GetComponent<MobsCoinDrop>().morreu = true;
-            CoinDropObj.GetComponent<MobsCoinDrop>().mob = this.gameObject;
+            CoinDropObj.GetComponent<MobsCoinDrop>().mob = gameObject;
         }
         if(other.tag == "Player"){
             Matar();

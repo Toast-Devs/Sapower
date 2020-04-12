@@ -14,6 +14,7 @@ public class VidaShow : MonoBehaviour
     void Start()
     {
         texto = GetComponent<Text>();
+        contador = GameObject.Find("player/Contadores");
     }
 
     // Update is called once per frame

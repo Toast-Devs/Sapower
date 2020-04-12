@@ -11,7 +11,7 @@ public class CameraShake : MonoBehaviour
     private float shakeRotation;
 
     public static CameraShake instance;
-    public float rotationMultiplier;
+    public float rotationMultiplier = 15;
 
 
     // Start is called before the first frame update

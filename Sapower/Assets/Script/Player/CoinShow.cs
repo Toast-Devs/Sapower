@@ -12,6 +12,7 @@ public class CoinShow : MonoBehaviour
     void Start()
     {
         text = GetComponent<Text>();
+        contador = GameObject.Find("player/Contadores");
     }
 
     // Update is called once per frame
