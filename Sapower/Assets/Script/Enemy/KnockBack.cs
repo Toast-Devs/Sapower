@@ -30,13 +30,18 @@ public class KnockBack : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !(collision.gameObject.tag == "Pé"))
+        if (collision.gameObject.tag == "Player" && !(collision.gameObject.tag == "Pé") && !(collision.gameObject.tag == "PlayerCoin"))
         {
+            //Cancelar o movimento do player
             controller.movementCancel = true;
+
+            //Aplicaar o movimento de knockback no player
             playerObj.GetComponent<Rigidbody2D>().velocity = new Vector2(knockback * (playerObj.transform.position.x - transform.position.x), playerObj.GetComponent<Rigidbody2D>().velocity.y);
 
+            //balançar a camera
             CameraShake.instance.StartShake(0.1f, 0.2f);
-
+            
+            //Voltar com o movimento do player após um certo tempo
             backMovement = true;
         }
         

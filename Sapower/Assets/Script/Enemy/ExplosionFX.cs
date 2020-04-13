@@ -24,14 +24,18 @@ public class ExplosionFX : MonoBehaviour
         if (collision.tag == "Pé")
         {
 
-
+            
             PlayFx();
+
+            //Balançar a camera
             CameraShake.instance.StartShake(0.2f, 0.3f);
 
 
         }
     }
 
+
+    //Efeito de explosão
     void PlayFx()
     {
         GameObject Fx = (GameObject)Instantiate(Explosion);

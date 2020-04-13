@@ -59,11 +59,13 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         
+        //Morrer caso encoste no pé
         if(other.tag == "Pé" && GetComponent<KnockBack>().backMovement == false){
             Morrer();
-            CoinDropObj.GetComponent<MobsCoinDrop>().morreu = true;
-            CoinDropObj.GetComponent<MobsCoinDrop>().mob = gameObject;
+
         }
+
+        //matar caso encoste em outra hitbox que não é o pé
         if(other.tag == "Player"){
             Matar();
         }
@@ -71,16 +73,22 @@ public class EnemyController : MonoBehaviour
     }
 
     void Movimento(){
+
+        //Andar para a direita até o tempo acabar
         if(direita && tempoParaVirar>0 && !esquerda){
             transform.localScale = new Vector2(1, 1);
             transform.Translate(new Vector3(Velocidade*Time.deltaTime, 0, 0), Space.Self);
             tempoParaVirar -= Time.deltaTime;
         }
+
+        //Andar para a esquerda até o tempo acabar
         else if(esquerda && tempoParaVirar>0 && !direita){
             transform.localScale = new Vector2(-1, 1);
             transform.Translate(new Vector3(-Velocidade*Time.deltaTime, 0, 0),Space.Self);
             tempoParaVirar-= Time.deltaTime;
         }
+
+        //Resetar o tempo logo após ele acabar
         else{
             direita=!direita;
             esquerda=!esquerda;
@@ -90,8 +98,7 @@ public class EnemyController : MonoBehaviour
 
     void Matar(){
 
-        //Mudar depois para tirar vida e reiniciar a fase
-        //vou colocar destroy pra concept proof
+        //Ainda é preciso fazer um evento para quando o player morrer
         vida.GetComponent<Vidas>().NumeroDeVidas--;
 
 
@@ -101,6 +108,10 @@ public class EnemyController : MonoBehaviour
 
         //vou colocar destroy pra concept proof
         playerRB.velocity = new Vector2(playerRB.velocity.x, quaoParaCimaOPlayerVai);
+        
+        //Dropar moeda ao morrer
+        CoinDropObj.GetComponent<MobsCoinDrop>().morreu = true;
+        CoinDropObj.GetComponent<MobsCoinDrop>().mob = gameObject;
 
     }
 }
