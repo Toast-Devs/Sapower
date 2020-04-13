@@ -34,18 +34,24 @@ public class EnemyController : MonoBehaviour
         playerObject = GameObject.Find("player_real");
         playerRB = playerObject.GetComponent<Rigidbody2D>();
         tempo = tempoParaVirar;
+        rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<Collider2D>();
      
-
+        //Código para começar pela direita
         if(comecarPelaDireita){
             direita = true;
             esquerda = false;
         }
+        //
+
+
+        //Código para começar pela esquerda
         if(comecarPelaEsquerda){
             direita = false;
             esquerda = true;
         }
-        rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<Collider2D>();
+        //
+
         
 
         
