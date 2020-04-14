@@ -8,10 +8,14 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce;
     public float shortHop;
-
-   
-    public int tempoDePulo;
     public LayerMask ground;
+    //
+    
+    //Movement cancel é para cancelar o movimento ao sofrer knockback
+    public bool movementCancel;
+    //
+
+
     private Rigidbody2D rb;
     private Collider2D coll;
     private enum State {idle, running, jumping, falling, landing, jump_air}
@@ -23,18 +27,23 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
 
-    {
+    {   
+
+        //Não tenho certeza se é neccessário
         state = State.idle;
+        //
+        //Iniciar variáveis
         noChao = false;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
+        movementCancel = false;
     }
     
     //Animacoes
     void Animacoes(){
 
-        
+        //Animação de andar
         if(rb.velocity.x>0.1 || rb.velocity.x<-0.1){
             
             anim.SetBool("Andando", true);
@@ -43,8 +52,10 @@ public class PlayerController : MonoBehaviour
             
             anim.SetBool("Andando", false);
         }
+        //
+    
         
-        //inicio do pulo
+        //Animação de pular
         if(rb.velocity.y>0.1 && noChao){
 
             anim.SetBool("Pulando", true);
@@ -53,8 +64,9 @@ public class PlayerController : MonoBehaviour
         else{
             anim.SetBool("Pulando", false);
         }
+        //
 
-        //caindo
+        //Animação de cair
         if(!noChao && rb.velocity.y<-0.1){
             anim.SetBool("Pulando", false);
             anim.SetBool("Caindo", true);
@@ -62,16 +74,18 @@ public class PlayerController : MonoBehaviour
         else{
             anim.SetBool("Caindo", false);
         }
+        //
 
     }
     
     //Movimento
-    void Movement(){
+    public void Movement(){
                 TocarChao();
 
         //Horizontal detection
         float hDirection = Input.GetAxisRaw("Horizontal");
 
+        //Andar horizontalmente
         //Direita
         if(hDirection>0.1){
 
@@ -79,7 +93,7 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector2(1, 1);
 
         }
-        //Direita
+        //Esquerda
         else if(hDirection<-0.1){
             
 
@@ -90,10 +104,11 @@ public class PlayerController : MonoBehaviour
         else{
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
+        //
 
 
         //Pulo
-        if(Input.GetButton("Jump") && noChao == true && anim.GetBool("Caindo") == false){
+        if(Input.GetButtonDown("Jump") && noChao == true && anim.GetBool("Caindo") == false){
            
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
@@ -103,9 +118,11 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * shortHop);
         }
+        //
 
     }
 
+    //Verificar quando ele encosta no chão
     void TocarChao(){
 
         if(coll.IsTouchingLayers(ground)){
@@ -116,12 +133,20 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+
+
+
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        Animacoes();
+      if (!movementCancel)
+        {
+            Movement();
+            Animacoes();
+        }
+      
     }
+
 
 
 

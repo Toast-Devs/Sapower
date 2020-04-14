@@ -51,8 +51,11 @@ TagManager:
   - name: Background
     uniqueID: 1389688847
     locked: 0
-  - name: Foreground
+  - name: Foreground1
     uniqueID: 1612926219
+    locked: 0
+  - name: Foreground2
+    uniqueID: 2688739335
     locked: 0
   - name: Fx
     uniqueID: 2794784099
