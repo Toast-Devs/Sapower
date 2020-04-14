@@ -7,7 +7,7 @@ public class VidaShow : MonoBehaviour
 {
 
     private Text texto;
-    private int qntVida;
+    public int qntVida;
     public GameObject contador;
 
     // Start is called before the first frame update
