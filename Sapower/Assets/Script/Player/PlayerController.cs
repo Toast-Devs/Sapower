@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     void Animacoes(){
 
         //Animação de andar
-        if(rb.velocity.x>0.1 || rb.velocity.x<-0.1){
+        if(rb.velocity.x>0.1 || rb.velocity.x<-0.1 && noChao == true){
             
             anim.SetBool("Andando", true);
         }
@@ -56,9 +56,10 @@ public class PlayerController : MonoBehaviour
     
         
         //Animação de pular
-        if(rb.velocity.y>0.1 && noChao){
+        if(rb.velocity.y>0.1 && noChao == false){
 
             anim.SetBool("Pulando", true);
+            anim.SetBool("Andando", false);
 
         }
         else{
@@ -70,6 +71,7 @@ public class PlayerController : MonoBehaviour
         if(!noChao && rb.velocity.y<-0.1){
             anim.SetBool("Pulando", false);
             anim.SetBool("Caindo", true);
+            anim.SetBool("Andando", false);
         }
         else{
             anim.SetBool("Caindo", false);
@@ -123,17 +125,19 @@ public class PlayerController : MonoBehaviour
     }
 
     //Verificar quando ele encosta no chão
-    void TocarChao(){
+    void TocarChao()
+    {
 
-        if(coll.IsTouchingLayers(ground)){
+        if (coll.IsTouchingLayers(ground))
+        {
             noChao = true;
         }
-        else{
+        else
+        {
             noChao = false;
         }
-        
-    }
 
+    }
 
 
     // Update is called once per frame

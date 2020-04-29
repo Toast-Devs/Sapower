@@ -12,7 +12,8 @@ public class KnockBack : MonoBehaviour
     private Rigidbody2D rb;
     public bool backMovement;
     private float knockbackLenght2;
-
+    public int qntVida;
+    public GameObject contador;
 
     private PlayerController controller;
     
@@ -40,7 +41,7 @@ public class KnockBack : MonoBehaviour
 
             //balançar a camera
             CameraShake.instance.StartShake(0.1f, 0.2f);
-            
+         
             //Voltar com o movimento do player após um certo tempo
             backMovement = true;
         }
